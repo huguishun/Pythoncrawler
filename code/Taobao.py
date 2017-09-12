@@ -8,13 +8,11 @@ def File():
 	os.makedirs(os.path.join("F:\Taobao", page_img))
 	get_url()
 def get_url():
-	name = 1
 	start_url = "https://s.taobao.com/search?q="+keyword
 	user_agent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:35.0) Gecko/20100101 Firefox/35.0"
 	headers = {"User-Agent":user_agent}
 	res = requests.get(start_url,headers)
 	wb = Workbook()
-	sheet = wb.active
 	for a in range(page):
 		time.sleep(10)
 		url_page = "https://s.taobao.com/search?q="+keyword+"&imgfile=&commend=all&ssid=s5-e&search_type=item&sourceId=tb.index&spm=a21bo.50862.201856-taobao-item.1&ie=utf8&bcoffset=4&ntoffset=4&p4ppushleft=1%2C48&s="+str(a*44)
@@ -42,7 +40,6 @@ def get_url():
 			f = open(title_txt+'.jpg', 'wb')
 			f.write(all_url.content) 
 			f.close()
-			name += 1
 			os.chdir("F:\Taobao\\"+pagename)
 			ws['A1'].value = '价格'
 			ws['B1'].value = '商品名'
