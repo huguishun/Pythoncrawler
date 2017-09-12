@@ -37,7 +37,7 @@ def get_url():
 			nick = eval(nic[i].split(':')[1])
 			img_url = eval(img[i].split(':')[1])
 			all_url = requests.get('http:'+img_url)
-			os.chdir("F:\maobao\\"+page_img)
+			os.chdir("F:\Taobao\\"+page_img)
 			title_txt = re.sub('[\r\n\t\*\?\<\>\|\:\/ ]', '', title)
 			f = open(title_txt+'.jpg', 'wb')
 			f.write(all_url.content) 
