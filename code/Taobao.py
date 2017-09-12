@@ -28,7 +28,6 @@ def get_url():
 		if a >= 1:
 			ws = wb.create_sheet()
 		for i in range(len(plt)):
-			ws = wb.active
 			ws = wb.worksheets[a]
 			price = eval(plt[i].split(':')[1])
 			title = eval(tlt[i].split(':')[1])
